@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to the product page</h1>
+<a href="{% url 'products:create' %}">Create</a>
+{% for product in products %}
+<div>
+    <h1><a href="{% url 'products:detail' product.slug %}">{{ product.name }}</a></h1>
+    <p>{{ product.price }}</p>
+</div>
+{% endfor %}
+{% endblock %}
